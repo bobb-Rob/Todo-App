@@ -1,5 +1,52 @@
 
 #navbar{
     display: grid;
-    grid-template-columns: 100px repeat(7, 1fr);
+    grid-template-columns: 70px 40px repeat(3, 1fr) repeat(2,50px) 110px;
+    align-items: center;
+    height: 100%;
+
+}
+
+
+img[alt="home-icon"] + div{ 
+    /* border: 2px solid red;   */
+    grid-column: 3 /6;
+    display: flex;
+    margin-left: 20px;
+}
+
+#navbar input[type="search"]{
+    height: 30px;
+    width: 50%;
+    margin-left: 7px;
+    padding-left: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+#navbar input[type="search"]:focus{    
+    border: 2px solid var(--emeraldLight4);
+}
+
+img[alt$="icon"]{
+   justify-self: end;   
+   filter: invert(98%) sepia(10%) saturate(101%) hue-rotate(181deg) brightness(113%) contrast(80%);
+    cursor: pointer;
+}
+
+img[alt$="icon"]:hover{
+    background-color: var(--emeraldLight4);
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+}
+
+.avatar{
+    height: 40px;
+    width: 40px;
+    background-color: var(--emeralgLight3);
+    border-radius: 50%;
+    margin-left: 20px;
+    cursor: pointer;
 }
