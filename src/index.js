@@ -1,3 +1,3 @@
-import './test.css'
+import './app.css'
 
 console.log('I see')

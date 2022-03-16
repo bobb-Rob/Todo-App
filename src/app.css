@@ -1,0 +1,47 @@
+
+
+:root{   
+    --neutralDark2: #040807;
+    --neutralGray: #a3a3a3;
+    --neutralGray1: #d4d4d4;
+    --neutralGray2: #e5e5e5;
+    --emeraldGreen: #064e3b;
+    --emeraldLight: #d1fae5;
+    --emeraldLight1: #a7f3d0;
+    --emeraldLight2: #6ee7b7;
+    --emeralgLight3: #34d399;
+    --emeraldLight4: #10b981;
+    --emeraldLight5: #059669;
+}
+
+
+*{
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* The app layout with grid Desktop */
+#app-container{
+    display: grid;
+    grid-template-columns: 200px repeat(2, 2fr);
+    grid-template-rows: min(70px) 2fr 1fr;
+    min-height: 100vh;
+}
+
+#app-container header{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background-color: var(--emeraldGreen);
+}
+
+#app-container aside.sidebar{
+    background-color: var(--emeraldLight1);
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+#app-container main.main-content{
+    background-color: var(--emeraldLight);
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+}
