@@ -1,0 +1,5 @@
+
+#navbar{
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+}

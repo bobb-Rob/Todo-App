@@ -23,7 +23,7 @@
 /* The app layout with grid Desktop */
 #app-container{
     display: grid;
-    grid-template-columns: 200px repeat(2, 2fr);
+    grid-template-columns: 250px repeat(2, 2fr);
     grid-template-rows: min(70px) 2fr 1fr;
     min-height: 100vh;
 }
@@ -34,14 +34,40 @@
     background-color: var(--emeraldGreen);
 }
 
-#app-container aside.sidebar{
+#app-container aside{
     background-color: var(--emeraldLight1);
     grid-column: 1 / 2;
     grid-row: 2 / 4;
 }
 
-#app-container main.main-content{
+#app-container main{
     background-color: var(--emeraldLight);
     grid-column: 2 / 4;
     grid-row: 2 / 4;
+}
+
+/* Mobile layout set up */
+@media screen and (max-width: 756px ) {
+    #app-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min(70px) repeat(2,2fr);       
+    }
+    
+    #app-container header{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        background-color: var(--emeraldGreen);
+    }
+    
+    #app-container aside{
+        display: none;
+        background-color: var(--emeraldLight1);        
+    }
+    
+    #app-container main{
+        background-color: var(--emeraldLight);
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+    }
 }
