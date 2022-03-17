@@ -39,18 +39,27 @@
     grid-column: 1 / 4;
     grid-row: 1 / 2;
     background-color: var(--emeraldGreen);
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    
 }
 
 #app-container aside{
     background-color: var(--emeraldLight);
     grid-column: 1 / 2;
     grid-row: 2 / 4;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    width: 250px;
+    padding-bottom: 20px; 
 }
 
 #app-container main{
     background-color: var(-white);
     grid-column: 2 / 4;
-    grid-row: 2 / 4;
+    grid-row: 2 / 4;   
 }
 
 /* Mobile layout set up */

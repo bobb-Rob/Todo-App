@@ -2,8 +2,10 @@
 #sidebar > #inner-sidebar{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px repeat(5, 35px) clamp(35px, 35px, 200px) 35px clamp(35px, min(35px), 200px) ;
-    min-height: 100%;
+    grid-template-rows: 70px repeat(5, 35px) minmax(min-content, max-content) 35px minmax(min-content, max-content) 35px;
+  overflow: auto;
+    height: 100%;
+    padding-bottom: 20px;  
     align-items: center;
     justify-items: center;
     font-family: var(--RobotoSans-font);
@@ -90,12 +92,13 @@ svg.down-arrow-btn{
     display: none;
 }
 
-svg.dropdown-arrow{
-    /* filter: invert(98%) sepia(10%) saturate(101%) hue-rotate(181deg) brightness(113%) contrast(80%);     */
-   /* position: absolute; */     
-  
-}
-
 .active {
     background-color: var(--emeraldLight1);   
+  }
+
+  .notes-dropdown-container,.projects-dropdown-container{
+      height: 100%; 
+      padding:2px 10px 5px 60px;
+      overflow: auto;
+      display: none;
   }
