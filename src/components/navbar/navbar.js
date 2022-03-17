@@ -19,8 +19,7 @@ const navBar = (function(){
             </div>
             <img src="${plusIcon}" alt="plus-icon">
             <img src="${bellIcon}" alt="bell-icon">
-            <div class='avatar' ></div>
-        
+            <div class='avatar' ></div>        
             `;
 
         return innerNav;

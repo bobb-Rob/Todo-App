@@ -1,0 +1,7 @@
+
+#sidebar div{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 40px repeat(6, 1fr);
+    height: 100%;
+}

@@ -7,14 +7,12 @@
 
 }
 
-
 img[alt="home-icon"] + div{ 
     /* border: 2px solid red;   */
     grid-column: 3 /6;
     display: flex;
     margin-left: 20px;
 }
-
 #navbar input[type="search"]{
     height: 30px;
     width: 50%;
@@ -24,7 +22,6 @@ img[alt="home-icon"] + div{
     outline: none;
     border: none;
 }
-
 #navbar input[type="search"]:focus{    
     border: 2px solid var(--emeraldLight4);
 }
