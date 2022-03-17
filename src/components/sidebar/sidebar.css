@@ -2,7 +2,7 @@
 #sidebar > #inner-sidebar{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px repeat(5, 35px) minmax(min-content, max-content) 35px minmax(min-content, max-content) 35px;
+    grid-template-rows: 70px repeat(5, 35px) minmax(min-content, max-content) 35px minmax(min-content, max-content);
   overflow: auto;
     height: 100%;
     padding-bottom: 20px;  

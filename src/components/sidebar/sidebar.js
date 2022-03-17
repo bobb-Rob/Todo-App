@@ -39,7 +39,7 @@ const sidebar = (function(){
             </div>
         </div> 
 
-        ${_sideBarDropDown('Projects')} 
+        ${_sideBarDropDownBtn('Projects')} 
         <div class='projects-dropdown-container' >        
             <p>Game Development App Projects
             My programming note on LinkedList function, mercy ayigbe is owing me. 200million USD
@@ -48,7 +48,7 @@ const sidebar = (function(){
             </p>          
         </div>  
 
-        ${_sideBarDropDown('Notes')}             
+        ${_sideBarDropDownBtn('Notes')}             
         <div class='notes-dropdown-container' >        
             <p>My programming note on LinkedList function, mercy ayigbe is owing me. 200million USD
             My programming note on LinkedList function, mercy ayigbe is owing me. 200million USD
@@ -60,7 +60,7 @@ const sidebar = (function(){
         return sidebar;
     }
 
-    const _sideBarDropDown = function(btnName){
+    const _sideBarDropDownBtn = function(btnName){
         let dropdown = `
             <div class='dropdown-btn' >
                 <div>                
