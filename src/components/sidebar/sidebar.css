@@ -3,16 +3,17 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 70px repeat(5, 35px) minmax(min-content, max-content) 35px minmax(min-content, max-content);
-  overflow: auto;
+    overflow: auto;
     height: 100%;
     padding-bottom: 20px;  
     align-items: center;
     justify-items: center;
     font-family: var(--RobotoSans-font);
+    font-size: .88rem;
     color: rgb(8, 8, 8);
 }
 
-#inner-sidebar .new-btn{
+#inner-sidebar .add-new-task-btn{
     grid-column: 1 / 2 ;
     height: 30px;
     width: 150px;
@@ -60,15 +61,13 @@ div.side-item > svg{
 
 
 .dropdown-btn{       
-    font-size: 1rem;    
-    /* border: 2px solid rgb(30, 6, 83); */
+    /* font-size: 1rem;     */
+    font-weight: 500;
     border: none;
-    /* background-color: var(--emeraldLight1);    */
-}
+}  
 
 .dropdown-btn > div{
-    position: relative; 
-    /* border: 2px solid red; */
+    position: relative;   
     width: 100%;
     height: 100%; 
     display: flex;
@@ -80,12 +79,6 @@ div.side-item > svg{
 
 .dropdown-btn > div + p{
    justify-self: start;
-}
-
-
-
-svg.right-arrow-btn{
-    
 }
 
 svg.down-arrow-btn{
@@ -101,4 +94,10 @@ svg.down-arrow-btn{
       padding:2px 10px 5px 60px;
       overflow: auto;
       display: none;
+  }
+
+
+  .notes-dropdown-container{
+      padding-bottom: 30px;
+      border: 2px solid red; 
   }

@@ -1,9 +1,9 @@
 import navBar from './components/navbar/navbar';
 import sidebar from './components/sidebar/sidebar';
 import dropDownMethod from './components/sidebar/dropdown';
-
-
+import todoAppLogic from './components/mainContent/main';
 import './app.css'
+
 
 const todoApp = (function(){
     const navContainer = document.getElementById('nav-container');   
@@ -15,7 +15,9 @@ const todoApp = (function(){
     sideMenu.appendChild(sidebar.innerSidebar());
 
 
+    // lOGIC
 
-    dropDownMethod.dropdownFn()
+    dropDownMethod.dropdownFn();
+    todoAppLogic.executeLogic();
 
 })();

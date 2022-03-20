@@ -6,7 +6,7 @@ const sidebar = (function(){
         const sidebar = document.createElement('div');
         sidebar.id = 'inner-sidebar';
         sidebar.innerHTML = `
-        <button class='new-btn' > 
+        <button class='add-new-task-btn' > 
             <svg name='plus-btn' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
             <p>New</p>
         </button>
@@ -65,13 +65,23 @@ const sidebar = (function(){
             <div class='dropdown-btn' >
                 <div>                
                     <svg class='right-arrow-btn dropdown-arrow' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                    <svg class='down-arrow-btn dropdown-arrow' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                    <svg class='down-arrow-btn open dropdown-arrow' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                 </div>
                 <p>${btnName}</p>
             </div>
         `;
         return dropdown;
     }
+
+        class dropDownbtn{
+            constructor(name, elements){
+                this.name = name;
+                this.elements = elements;
+            }
+
+
+        }
+
 
 
 

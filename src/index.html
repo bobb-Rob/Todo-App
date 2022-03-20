@@ -11,10 +11,27 @@
 </head>
 <body>    
     <div id="app-container">
-        <header id="nav-container" >            
-        </header>
+        <header id="nav-container" ></header>
         <aside id="sidebar"></aside>
-        <main id="main-content"></main>       
+        <main id="main-content">
+          <div id="inbox">
+              <h3>Inbox</h3>
+            <!-- template -->
+            <div class="todo-container">
+
+            </div>
+
+          </div>
+          <div id="today"></div>
+          <div id="due-in-7-days"></div>
+          <div id="recent-work"></div>   
+        </main>
+        <div class ="add-task-form">           
+            <input type="text" id="task-title" placeholder="Enter task title" > 
+            <textarea name="description" id="task-description" cols="30" rows="10"></textarea>
+            <button id="createTaskBtn" >Create task</button>
+            <button type="submit" id="addtask-form-cancel" >Cancel</button>
+        </div>      
     </div>
 </body>
 </html>

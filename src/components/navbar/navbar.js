@@ -17,7 +17,7 @@ const navBar = (function(){
                 <img src="${searchIcon}" alt="search icon">
                 <input type="search" placeholder="Search" >
             </div>
-            <img src="${plusIcon}" alt="plus-icon">
+            <img src="${plusIcon}" alt="plus-icon add-new-task-btn">
             <img src="${bellIcon}" alt="bell-icon">
             <div class='avatar' ></div>        
             `;
