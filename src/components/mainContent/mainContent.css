@@ -64,24 +64,21 @@
     width: 100%;   
     display: grid !important;
     grid-template-columns: 12fr repeat(3,35px);
-    align-items: center;   
-    /* border: 1px solid green; */
+    align-items: center;     
     z-index: 1000;
     opacity: 0;
 }
 
 .task-on-hover-content:hover{
-   opacity: 1;
+   opacity: 0.8;
 }
-
-
 
 .task-on-hover-content svg:nth-child(1){
   margin-left: -25px;
 }
 
 .task-on-hover-content svg,.task-wrapper div:nth-child(3) svg{
-  fill: var(--neutralGray);
+  fill: var(--neutralDark3);
 }
 
 
