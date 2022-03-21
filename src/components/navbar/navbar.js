@@ -14,10 +14,10 @@ const navBar = (function(){
             <img src="${menuIcon}" alt="menu-icon" >
             <img src="${homeIcon}" alt="home-icon">
             <div>
-                <img src="${searchIcon}" alt="search icon">
+                <img src="${searchIcon}" alt="search-icon">
                 <input type="search" placeholder="Search" >
             </div>
-            <img src="${plusIcon}" alt="plus-icon">
+            <img src="${plusIcon}" alt="plus-icon" class='add-new-task-btn' >
             <img src="${bellIcon}" alt="bell-icon">
             <div class='avatar' ></div>        
             `;

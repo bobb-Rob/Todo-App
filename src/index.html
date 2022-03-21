@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,900;1,100&display=swap" rel="stylesheet">
+    <title>Proactive-Todo App</title>
 </head>
 <body>    
     <div id="app-container">
         <header id="nav-container" ></header>
         <aside id="sidebar"></aside>
-        <main id="main-content"></main>
-        
-       
+        <main id="main-content">
+          <div id="inbox" class="main inbox" >
+              <h3>Task box</h3>
+            <!-- template -->
+            <div class="todo-container">
+            </div>
+
+          </div>
+          <div class="main today"></div>
+          <div class="main due-in-7-days"></div>
+          <div class="main recent-work"></div>   
+        </main>
+        <div class ="add-task-form">           
+            <input type="text" id="task-title" placeholder="Enter task title" > 
+            <textarea name="description" id="task-description" cols="30" rows="10"></textarea>
+            <button id="createTaskBtn" >Create task</button>
+            <button type="submit" id="addtask-form-cancel" >Cancel</button>
+        </div>      
     </div>
 </body>
 </html>

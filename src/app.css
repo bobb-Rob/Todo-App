@@ -1,22 +1,30 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,900;1,100&display=swap');
+
 
 :root{   
     --neutralDark2: #040807;
+    --neutralDark3: #0e1110;
     --neutralGray: #a3a3a3;
     --neutralGray1: #d4d4d4;
     --neutralGray2: #e5e5e5;
+    --white: #ffffff;
     --emeraldGreen: #064e3b;
+    --emeraldGreenDark: #02241b;
     --emeraldLight: #d1fae5;
     --emeraldLight1: #a7f3d0;
     --emeraldLight2: #6ee7b7;
-    --emeralgLight3: #34d399;
+    --emeraldLight3: #34d399;
     --emeraldLight4: #10b981;
     --emeraldLight5: #059669;
+    --notoSans-font: 'Noto Sans', sans-serif;
+    --RobotoSans-font: 'Roboto', sans-serif;
 }
 
 
 *{
   margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -32,18 +40,27 @@
     grid-column: 1 / 4;
     grid-row: 1 / 2;
     background-color: var(--emeraldGreen);
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    
 }
 
 #app-container aside{
-    background-color: var(--emeraldLight1);
+    background-color: var(--emeraldLight);
     grid-column: 1 / 2;
     grid-row: 2 / 4;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    width: 250px;
+    padding-bottom: 20px; 
 }
 
 #app-container main{
-    background-color: var(--emeraldLight);
+    background-color: var(-white);
     grid-column: 2 / 4;
-    grid-row: 2 / 4;
+    grid-row: 2 / 4;   
 }
 
 /* Mobile layout set up */
