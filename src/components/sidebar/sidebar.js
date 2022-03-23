@@ -3,6 +3,8 @@ import './sidebar.css'
 const sidebar = (function(){
 
     const innerSidebar = function(){
+        const sideMenu = document.getElementById('sidebar');
+
         const sidebar = document.createElement('div');
         sidebar.id = 'inner-sidebar';
         sidebar.innerHTML = `
@@ -56,8 +58,7 @@ const sidebar = (function(){
             </p>          
         </div>
         `;
-
-        return sidebar;
+        sideMenu.appendChild(sidebar);       
     }
 
     const _sideBarDropDownBtn = function(btnName){
@@ -69,21 +70,9 @@ const sidebar = (function(){
                 </div>
                 <p>${btnName}</p>
             </div>
-        `;
+        `;       
         return dropdown;
     }
-
-        class dropDownbtn{
-            constructor(name, elements){
-                this.name = name;
-                this.elements = elements;
-            }
-
-
-        }
-
-
-
 
     return { innerSidebar}
 })();

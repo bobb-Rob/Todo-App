@@ -38,11 +38,29 @@
 }
 
 .task-wrapper div:nth-child(1){  
-    justify-self: start;   
+    justify-self: start;  
+    z-index: 10; 
 }
 
+.task-wrapper div:nth-child(1) input[type='checkbox']{  
+   height: 20px;
+   width: 20px;
+   border: 2px solid green;  
+   position: relative; 
+}
+
+.task-wrapper div:nth-child(1) input[type='checkbox']:before{  
+  background-color: green;
+}
+
+.task-wrapper div:nth-child(1) input[type='checkbox']::after{  
+  background-color: green;
+}
+
+
 .task-wrapper div:nth-child(3){
-    justify-self: end;
+    justify-self: end;   
+    z-index: 10;   
 }
 
 /* 
@@ -69,13 +87,14 @@
   margin-left: -25px;
 }
 
-.task-on-hover-content svg,.task-wrapper div:nth-child(3) svg{
+
+.task-on-hover-content svg,.task-delete-icon-container svg{
   fill: var(--neutralDark3);
+  cursor: pointer;
 }
 
 
 /* Add Task Form UI Code */
-
 
 .add-task-form{
     display: none;
