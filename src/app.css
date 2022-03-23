@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: 250px repeat(2, 2fr);
     grid-template-rows: min(70px) 2fr 1fr;
-    min-height: 100vh;
+    min-height: 100vh;    
 }
 
 #app-container header{
