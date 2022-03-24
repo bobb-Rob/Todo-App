@@ -1,0 +1,68 @@
+
+
+.todo-container .section{
+    border-left: 2px solid red;
+    margin: 20px 0px 20px 0px;
+    padding-left: 3px;
+}
+
+.section > .sec-name-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid green; */
+}
+
+.section > .sec-name-container > .section-header{
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid var(--emeraldLight4) ;
+    /* background-color: var(--emeraldLight4); */
+    border-radius: 5px ;
+    /* box-shadow: 0px 0px 4px 0px var(--neutralDark3); */
+}
+
+.section > .task-container{  
+    padding: 5px;  
+}
+
+.inline-add-task-btn,.inline-add-task-btn > svg,.toggle-add-section-form > svg{
+    color: var(--neutralDark3);
+    fill: var(--neutralDark3);
+}
+
+.section > .inline-add-task-btn,.toggle-add-section-form{  
+    border: none;
+    display: flex;  
+    justify-content: center; 
+    align-items: center;  
+    cursor: pointer;
+}
+
+.section > .inline-add-task-btn{
+   padding: 0px 15px 0px 0px;
+   
+}
+.section > .inline-add-task-btn:hover{
+    background-color: var(--emeraldLight1);
+    border-radius: 5px ;
+   
+}
+
+.section >.toggle-add-section-form{
+    position: relative;
+    width: 100%;
+    border: 1px solid var(--emeraldLight4);
+    border-radius: 5px ;  
+}
+
+
+
+
+
+.name-section-form{
+    display: none;
+}

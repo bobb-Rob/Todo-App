@@ -1,5 +1,6 @@
 import navBar from "../navbar/navbar";
 import sidebar from "../sidebar/sidebar";
+import { Section } from "./section";
 
 const DomElement = (()=>{
 
@@ -34,7 +35,7 @@ const DomElement = (()=>{
         appContainer.append(_addTaskForm)
     }
 
-
+    // 
 
 
 
@@ -49,6 +50,7 @@ const DomElement = (()=>{
         navBar.innerNavbar();
         sidebar.innerSidebar();
         addTaskForm();
+        Section.createSection();
     }
 
     return {createDomEl}
