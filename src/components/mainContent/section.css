@@ -26,6 +26,12 @@
     /* box-shadow: 0px 0px 4px 0px var(--neutralDark3); */
 }
 
+.section > .sec-name-container > svg{
+    cursor: pointer;
+}
+
+
+
 .section > .task-container{  
     padding: 5px;
    

@@ -1,0 +1,90 @@
+
+
+
+/* Add Task Form UI Code */
+
+.fixed-add-task-form{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%) ; 
+    min-width: 350px;
+    height: auto;
+    box-shadow: 0px 0px 16px 0px var(--neutralGray);
+}
+
+.add-task-form{
+    display: none;   
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px;
+}
+/* 
+.inline-add-task-form{
+    border: 1px solid red;
+} */
+
+.add-task-form > div > div:first-child{
+    padding: 5px;   
+   
+}
+
+.add-task-form > div > div:first-child input{
+    width: 100%;
+    border: none;
+    padding: 8px;
+   
+}
+
+.add-task-form > div > div:first-child input:last-child{
+    border-top: 1px solid var(--neutralGray);
+    border-bottom: 1px solid var(--neutralGray);   
+}
+
+.add-task-form > div > div:last-child{   
+    display: flex;
+}
+
+.add-task-form > div > div:last-child div{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid rgb(42, 28, 107); */
+    padding: 8px;
+}
+
+.add-task-form > div > div:last-child div:first-child svg{
+   margin-right: 10px ;
+   height: 20px;
+   width: 20px;
+   cursor: pointer;
+}
+
+.add-task-form > div > div:last-child div:last-child{
+    justify-content: flex-end;  
+}
+
+.add-task-form > div > div:last-child button{
+   margin-left: 10px; 
+  padding: 5px;
+  border-radius: 5px;
+  border: none; 
+  cursor: pointer;
+}
+
+.add-task-form > div > div:last-child button:first-child{  
+  background-color: var(--emeraldGreen);
+  color: var(--white);  
+}
+
+.add-task-form > div > div:last-child button:last-child{  
+  background-color: var(--emeraldGreenDark);
+  color: var(--white);  
+}
+
+.empty-input-warning{
+    color: red;
+    font-family: var(--RobotoSans-font);
+    font-size: 0.8rem;
+    margin-left: 10px;
+}

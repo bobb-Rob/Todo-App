@@ -5,9 +5,9 @@ const addTask = (() => {
     
     
     // Add task form
-    const addTaskForm = (destination) => {
+    const addTaskForm = (destination, classType) => {
         const _addTaskForm = document.createElement('div');
-        _addTaskForm.classList.add('add-task-form');
+        _addTaskForm.classList.add('add-task-form', `${classType}`);
         _addTaskForm.innerHTML = `
                 <div>      
                     <div>
@@ -24,11 +24,12 @@ const addTask = (() => {
                         </div>
                         <div>
                             <button class="createTaskBtn" >Add task</button>
-                            <button type="submit" id="addtask-form-cancel" >Cancel</button>
+                            <button type="submit" class="addtask-form-cancel" >Cancel</button>
                         </div>    
                     </div>     
                 </div>     
         `;
+
 
         destination.append(_addTaskForm);
     }
@@ -36,7 +37,7 @@ const addTask = (() => {
 
 
 
-    return [addTaskForm]
+    return {addTaskForm}
 })();
  
 

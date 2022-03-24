@@ -6,6 +6,7 @@ import { Section } from './section';
 
 
 import './mainContent.css'
+import addTask from './addTaskForm';
 
 
 
@@ -19,8 +20,9 @@ const eventlogic = (() => {
                 document.querySelector('#task-title').focus();
             });
         }            
+
          
-        const addTaskFormCancelBtn = document.getElementById('addtask-form-cancel');
+        const addTaskFormCancelBtn = document.querySelector('.addtask-form-cancel');
         addTaskFormCancelBtn.addEventListener('click', function(){
             document.querySelector('.add-task-form').style.display = 'none';
         });
@@ -33,25 +35,7 @@ const eventlogic = (() => {
     }
 
 
-    const addSectionEvent = () => {
-        
-        
-            // const addSectionDisplayBtn = document.querySelectorAll(".toggle-add-section-form");
-            // for(let i = 0; i < addSectionDisplayBtn.length; i++){
-            //     addSectionDisplayBtn[i].addEventListener("click", function(e){           
-            //         document.querySelector('.add-task-form').style.display = 'block';
-            //         document.querySelector('#task-title').focus();
-            //     });
-            // }            
-             
-            // const addTaskFormCancelBtn = document.getElementById('addtask-form-cancel');
-            // addTaskFormCancelBtn.addEventListener('click', function(){
-            //     document.querySelector('.add-task-form').style.display = 'none';
-            // });
-      
-
-
-
+    const addSectionEvent = () => {  
       document.querySelector('.todo-container').addEventListener('click', (e) => {
       
         if(e.target.classList.contains('toggle-add-section-form')){ 
@@ -70,7 +54,6 @@ const eventlogic = (() => {
         if(e.target.classList.contains('add-section-btn')){
         //    console.log(e.target.parentNode.previousElementSibling)
            const sectionName = e.target.parentNode.previousElementSibling;
-
            let newSectionName = sectionName.value;                 
             if(newSectionName){
                 let currentSection = document.getElementById(e.target.parentNode.parentNode.parentNode.id);           
@@ -89,11 +72,35 @@ const eventlogic = (() => {
             sectionName.focus();        
         }
 
+        // inline add task form created
         if(e.target.classList.contains('inline-add-task-btn')){
-            console.log(e.target.parentNode.childNodes);
-            let taskContainers = e.target.parentNode.childNodes[3];
-            console.log(taskContainers)
+            const div = document.createElement('div');
+            div.className = 'inline-add-task-form-wrapper';
+            addTask.addTaskForm(div, 'inline-add-task-form');
+           console.log(div.children[0].style.display !== 'block');
+
+           const inlineForm =  e.target.previousElementSibling;
+            console.log(inlineForm)
+            if(inlineForm.classList.contains('inline-add-task-form-wrapper') && inlineForm.children[0].style.display === 'block'){
+                  return;
+            }else{
+                e.target.parentNode.insertBefore(div, e.target);
+                div.children[0].style.display = 'block'; 
+            }      
         }
+
+        // Cancel btn event on the inline add task form
+        if(e.target.classList.contains('addtask-form-cancel')){          
+           let inlineAddForm = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+           inlineAddForm.remove();          
+        }
+
+        // 
+        if(e.target.classList.contains('section-threeDot-more')){          
+            let moreIcon = e.target
+         }
+       
+
 
 
          
