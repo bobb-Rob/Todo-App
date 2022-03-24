@@ -53,29 +53,50 @@ const eventlogic = (() => {
 
 
       document.querySelector('.todo-container').addEventListener('click', (e) => {
-
-        if(e.target.classList.contains('toggle-add-section-form')){
-            e.target.nextElementSibling.style.display = 'block';
+      
+        if(e.target.classList.contains('toggle-add-section-form')){ 
+            let form = e.target.nextElementSibling     
+            form.style.display = 'block';  
+            form.childNodes[1].focus();  
         }
-
+       
         if(e.target.classList.contains('cancel-add-section')){
-            e.target.parentNode.parentNode.style.display = 'none';          
+            let sectionNameInput = e.target.parentNode.parentNode.childNodes[1];           
+            e.target.parentNode.parentNode.style.display = 'none'; 
+            sectionNameInput.value = '';
         }
-
-        
+ 
+       
         if(e.target.classList.contains('add-section-btn')){
-            let node = document.getElementById(e.target.parentNode.parentNode.parentNode.id);
-            console.log(e.target.parentNode.parentNode.parentNode)
-            if(node.nextSibling){
-                console.log(node.nextSibling)
-                Section.createSection("Dum", node.nextSibling);
+        //    console.log(e.target.parentNode.previousElementSibling)
+           const sectionName = e.target.parentNode.previousElementSibling;
+
+           let newSectionName = sectionName.value;                 
+            if(newSectionName){
+                let currentSection = document.getElementById(e.target.parentNode.parentNode.parentNode.id);           
+                if(currentSection.nextSibling){    
+                    // if there is a next section, insert the new section before the previous one    
+                    Section.createSection(newSectionName, currentSection.nextSibling);
+                    sectionName.parentNode.style.display = 'none';
+                    sectionName.value = '';  
+                }else{
+                    Section.createSection(newSectionName);
+                    sectionName.parentNode.style.display = 'none';
+                    sectionName.value = '';  
+                }
+                  
             }
-            Section.createSection("Dum");
-
-
-            console.log(e.target.parentNode.id)
+            sectionName.focus();        
         }
-          
+
+        if(e.target.classList.contains('inline-add-task-btn')){
+            console.log(e.target.parentNode.childNodes);
+            let taskContainers = e.target.parentNode.childNodes[3];
+            console.log(taskContainers)
+        }
+
+
+         
       });
         
     }
