@@ -15,14 +15,14 @@ const eventlogic = (() => {
         for(let i = 0; i < addBtn.length; i++){
             addBtn[i].addEventListener("click", function(e){ 
 
-                addTask.addTaskForm(appContainer,'fixed-add-task-form');                
-                // document.querySelector('.add-task-form').style.display = 'block';
+                addTask.addTaskForm(appContainer,'fixed-add-task-form');    
                 document.querySelector('#task-title').focus();
-                
+                // Attach the cancel event
                 const addTaskFormCancelBtn = document.querySelector('.addtask-form-cancel');
                 addTaskFormCancelBtn.addEventListener('click', function(e){
                     document.querySelector('.fixed-add-task-form').remove();
                 });
+
             });
         }            
          
@@ -33,25 +33,25 @@ const eventlogic = (() => {
     const addSectionEvent = () => {  
       document.querySelector('.todo-container').addEventListener('click', (e) => {
       
+        // Display add section form
         if(e.target.classList.contains('toggle-add-section-form')){ 
             let form = e.target.nextElementSibling     
             form.style.display = 'block';  
             form.childNodes[1].focus();  
         }
-       
+       // cancel Display add section form
         if(e.target.classList.contains('cancel-add-section')){
             let sectionNameInput = e.target.parentNode.parentNode.childNodes[1];           
             e.target.parentNode.parentNode.style.display = 'none'; 
             sectionNameInput.value = '';
         }
  
-       
-        if(e.target.classList.contains('add-section-btn')){
-        //    console.log(e.target.parentNode.previousElementSibling)
+        //Add Section btn event - Injects section in the right position    
+        if(e.target.classList.contains('add-section-btn')){        
            const sectionName = e.target.parentNode.previousElementSibling;
            let newSectionName = sectionName.value;                 
             if(newSectionName){
-                let currentSection = document.getElementById(e.target.parentNode.parentNode.parentNode.id);           
+                let currentSection = document.getElementById(e.target.parentNode.parentNode.parentNode.parentNode.id);           
                 if(currentSection.nextSibling){    
                     // if there is a next section, insert the new section before the previous one    
                     Section.createSection(newSectionName, currentSection.nextSibling);
@@ -73,6 +73,7 @@ const eventlogic = (() => {
             div.className = 'inline-add-task-form-wrapper';
             addTask.addTaskForm(div, 'inline-add-task-form');          
             console.log(e.target)
+
            const inlineForm =  e.target.previousElementSibling;          
             if(inlineForm.classList.contains('inline-add-task-form-wrapper') && inlineForm.children[0].style.display === 'block'){
                   return;
@@ -94,17 +95,29 @@ const eventlogic = (() => {
          }
        
 
-        //Add task to the DOM;
+        // inline Add task to the DOM;
         if(e.target.classList.contains('createTaskBtn')){
 
             let inlineAddForm = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
-            let taskContainerId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.previousElementSibling.id;
-            console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.previousElementSibling)
-            console.log(taskContainerId)
+            let taskContainerId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.previousElementSibling.id;            
             createTask(document.getElementById(taskContainerId));
             inlineAddForm.remove();
         }
 
+        // Delete task from the DOM and Store in Proactive todo Array
+        if(e.target.classList.contains('task-delete-icon')){
+            const wrapper = e.target.parentNode.parentNode;
+            const taskId = wrapper.id;
+            console.log(wrapper);
+
+            // Delete from Array
+            proactiveApp.deleteItem(taskId);
+            wrapper.remove(); 
+            boxCount(); 
+            
+            console.log(proactiveApp.todoBox)
+            
+        }
          
       });
         

@@ -29,10 +29,11 @@ class Task{
             destination.push(task);
         }
 
-
-
         this.deleteItem = (id) =>{
-            this.todoBox
+            const todoArr = [...this.todoBox];
+          this.todoBox = this.todoBox.filter(item => {              
+            return item.id !== id
+           })
         }
 
 // Code Logic to filter task with todays date
@@ -48,5 +49,7 @@ class Task{
 
 
     const proactiveApp = new TodoApp(); 
+
+  
 
 export default proactiveApp;
