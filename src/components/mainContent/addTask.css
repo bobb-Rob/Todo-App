@@ -11,10 +11,11 @@
     min-width: 350px;
     height: auto;
     box-shadow: 0px 0px 16px 0px var(--neutralGray);
+    z-index: 100;
 }
 
 .add-task-form{
-    display: none;   
+    /* display: none;    */
     background-color: var(--white);
     border-radius: 10px;
     padding: 10px;

@@ -43,7 +43,7 @@ const DomElement = (()=>{
     function createDomEl(){        
         navBar.innerNavbar();
         sidebar.innerSidebar();
-        addTask.addTaskForm(appContainer,'fixed-add-task-form');
+        // addTask.addTaskForm(appContainer,'fixed-add-task-form');
         Section.createSection();
     }
 

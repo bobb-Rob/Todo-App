@@ -13,30 +13,31 @@
     /* border: 1px solid green; */
 }
 
+/* Section Name */
 .section > .sec-name-container > .section-header{
     display: flex;
     align-items: center;
-    font-size: .8rem;
+    font-size: 1rem;
+    font-weight: 600;
     height: 20px;
     padding: 5px;
     border: none;
     /* border: 1px solid var(--emeraldLight4) ; */
-    /* background-color: var(--emeraldLight4); */
+    background-color: var(--white);
     border-radius: 5px ;
     /* box-shadow: 0px 0px 4px 0px var(--neutralDark3); */
 }
 
+/* Section Name Icons */
 .section > .sec-name-container > svg{
     cursor: pointer;
 }
 
-
-
 .section > .task-container{  
-    padding: 5px;
-   
+    padding: 10px 0px 10px 0px;   
 }
 
+/* Inline Add TaskButton & Add Section Button */
 .inline-add-task-btn,.inline-add-task-btn > svg,.toggle-add-section-form > svg{
     color: var(--neutralDark3);
     fill: var(--emeraldLight4);
@@ -44,6 +45,7 @@
 
 .section > .inline-add-task-btn,.toggle-add-section-form{  
     border: none;
+    background-color: var(--white);
     display: flex;  
     justify-content: center; 
     align-items: center;  

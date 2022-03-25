@@ -1,3 +1,16 @@
+import uniqid from 'uniqid';
+
+class Task{
+    constructor(title, description, dueDate = null, label = null, priority = 4, reminder = null){
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.label = label;
+        this.priority = priority;
+        this.id = uniqid();
+        this.completed = false;
+    }
+}
 
 
 
@@ -5,13 +18,18 @@
         this.todoBox = [];        
         this.notes = [];
         this.projects = [];
-        this.sectionTasks = []
+        this.sections = []
 
 
+        this.newTask = function(text, description){
+            return new Task(text, description);
+        }
 
        this.addTask = function(destination, task){
             destination.push(task);
         }
+
+
 
         this.deleteItem = (id) =>{
             this.todoBox
@@ -29,6 +47,6 @@
 
 
 
-    let proactiveApp = new TodoApp(); 
+    const proactiveApp = new TodoApp(); 
 
 export default proactiveApp;

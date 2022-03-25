@@ -29,19 +29,19 @@
     position:relative;
     padding: 5px;
     padding-left: 0px;
-    border-bottom: 1px solid var( --neutralGray) ;
-    /* border: 2px solid rgb(26, 18, 143); */
+    border-bottom: 1px solid var( --neutralGray) ;  
     min-height: 50px;
     display: grid;
     align-items: center;
     grid-template-columns: 30px 5fr 0.5fr;
+    font-size: .9rem;
 }
 
 .task-wrapper div:nth-child(1){  
     justify-self: start;  
     z-index: 10; 
 }
-
+/* 
 .task-wrapper div:nth-child(1) input[type='checkbox']{  
    height: 20px;
    width: 20px;
@@ -55,7 +55,7 @@
 
 .task-wrapper div:nth-child(1) input[type='checkbox']::after{  
   background-color: green;
-}
+} */
 
 
 .task-wrapper div:nth-child(3){

@@ -1,39 +1,34 @@
 import proactiveApp from './businessLayer';
 import dropDownMethod from '../sidebar/dropdown';
+import addTask from './addTaskForm';
 import { Task, createTask } from './task';
 import { Section } from './section';
-
-
-
 import './mainContent.css'
-import addTask from './addTaskForm';
 
 
 
 const eventlogic = (() => {
 
     function displayAddTaskForm(){
+        const appContainer = document.getElementById('app-container');
         const addBtn = document.querySelectorAll(".add-new-task-btn");
         for(let i = 0; i < addBtn.length; i++){
-            addBtn[i].addEventListener("click", function(e){           
-                document.querySelector('.add-task-form').style.display = 'block';
+            addBtn[i].addEventListener("click", function(e){ 
+
+                addTask.addTaskForm(appContainer,'fixed-add-task-form');                
+                // document.querySelector('.add-task-form').style.display = 'block';
                 document.querySelector('#task-title').focus();
+                
+                const addTaskFormCancelBtn = document.querySelector('.addtask-form-cancel');
+                addTaskFormCancelBtn.addEventListener('click', function(e){
+                    document.querySelector('.fixed-add-task-form').remove();
+                });
             });
         }            
-
          
-        const addTaskFormCancelBtn = document.querySelector('.addtask-form-cancel');
-        addTaskFormCancelBtn.addEventListener('click', function(){
-            document.querySelector('.add-task-form').style.display = 'none';
-        });
+        // 
     }
     
-
-    const createTaskEvent = function(){
-        const createTaskBtn = document.getElementById('createTaskBtn');
-        createTaskBtn.addEventListener('click', createTask)
-    }
-
 
     const addSectionEvent = () => {  
       document.querySelector('.todo-container').addEventListener('click', (e) => {
@@ -76,17 +71,15 @@ const eventlogic = (() => {
         if(e.target.classList.contains('inline-add-task-btn')){
             const div = document.createElement('div');
             div.className = 'inline-add-task-form-wrapper';
-            addTask.addTaskForm(div, 'inline-add-task-form');
-           console.log(div.children[0].style.display !== 'block');
-
-           const inlineForm =  e.target.previousElementSibling;
-            console.log(inlineForm)
+            addTask.addTaskForm(div, 'inline-add-task-form');          
+            console.log(e.target)
+           const inlineForm =  e.target.previousElementSibling;          
             if(inlineForm.classList.contains('inline-add-task-form-wrapper') && inlineForm.children[0].style.display === 'block'){
                   return;
             }else{
                 e.target.parentNode.insertBefore(div, e.target);
-                div.children[0].style.display = 'block'; 
-            }      
+                div.children[0].style.display = 'block';
+                e.target.previousElementSibling.children[0].children[0].children[0].children[0].focus();            }      
         }
 
         // Cancel btn event on the inline add task form
@@ -101,7 +94,16 @@ const eventlogic = (() => {
          }
        
 
+        //Add task to the DOM;
+        if(e.target.classList.contains('createTaskBtn')){
 
+            let inlineAddForm = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+            let taskContainerId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.previousElementSibling.id;
+            console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.previousElementSibling)
+            console.log(taskContainerId)
+            createTask(document.getElementById(taskContainerId));
+            inlineAddForm.remove();
+        }
 
          
       });
@@ -124,9 +126,9 @@ const eventlogic = (() => {
     function attachAllEvent(){
         // Attached event listeners to dropdown btn with classs name dropdownBtn & icons with class name open 
         dropDownMethod.dropdownFn();
-        // Display add task form & close it
-        displayAddTaskForm();
-        // createTaskEvent();
+        // insert add task form & remove it
+        displayAddTaskForm();  
+         //Add Task section events  
         addSectionEvent();
         boxCount(); 
     }   
