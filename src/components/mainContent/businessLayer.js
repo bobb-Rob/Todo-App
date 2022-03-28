@@ -36,6 +36,14 @@ class Task{
            })
         }
 
+        this.toggleDone = function(id){
+            const index = this.todoBox.findIndex(item => item.id === id);
+            this.todoBox[index].completed = !this.todoBox[index].completed;
+        }
+
+
+
+
 // Code Logic to filter task with todays date
         this.todayBox = [];
 

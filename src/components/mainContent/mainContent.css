@@ -37,36 +37,18 @@
     font-size: .9rem;
 }
 
-.task-wrapper div:nth-child(1){  
+.task-wrapper > div.checkbob-wrap{  
     justify-self: start;  
-    z-index: 10; 
-}
-/* 
-.task-wrapper div:nth-child(1) input[type='checkbox']{  
-   height: 20px;
-   width: 20px;
-   border: 2px solid green;  
-   position: relative; 
+    z-index: 10;    
 }
 
-.task-wrapper div:nth-child(1) input[type='checkbox']:before{  
-  background-color: green;
-}
 
-.task-wrapper div:nth-child(1) input[type='checkbox']::after{  
-  background-color: green;
-} */
-
-
-.task-wrapper div:nth-child(3){
+/* Delete icon */
+.task-wrapper > div.task-delete-icon-container{
     justify-self: end;   
     z-index: 10;   
 }
 
-/* 
-.task-wrapper div:nth-child(3){
-    justify-self: end;
-} */
 
 .task-on-hover-content{
     position: absolute;   

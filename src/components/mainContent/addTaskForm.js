@@ -24,7 +24,7 @@ const addTask = (() => {
                         </div>
                         <div>
                             <button class="createTaskBtn" >Add task</button>
-                            <button type="submit" class="addtask-form-cancel" >Cancel</button>
+                            <button class="addtask-form-cancel" >Cancel</button>
                         </div>    
                     </div>     
                 </div>     
@@ -33,6 +33,12 @@ const addTask = (() => {
 
         destination.append(_addTaskForm);
     }
+
+    const editTask = function(destination){
+        addTaskForm(destination)
+
+    }
+
 
 
 

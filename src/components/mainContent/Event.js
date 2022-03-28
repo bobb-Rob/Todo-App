@@ -71,8 +71,7 @@ const eventlogic = (() => {
         if(e.target.classList.contains('inline-add-task-btn')){
             const div = document.createElement('div');
             div.className = 'inline-add-task-form-wrapper';
-            addTask.addTaskForm(div, 'inline-add-task-form');          
-            console.log(e.target)
+            addTask.addTaskForm(div, 'inline-add-task-form');  
 
            const inlineForm =  e.target.previousElementSibling;          
             if(inlineForm.classList.contains('inline-add-task-form-wrapper') && inlineForm.children[0].style.display === 'block'){
@@ -95,7 +94,7 @@ const eventlogic = (() => {
          }
        
 
-        // inline Add task to the DOM;
+        // inline Add task btn event to add task to the DOM;
         if(e.target.classList.contains('createTaskBtn')){
 
             let inlineAddForm = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
@@ -113,12 +112,75 @@ const eventlogic = (() => {
             // Delete from Array
             proactiveApp.deleteItem(taskId);
             wrapper.remove(); 
-            boxCount(); 
-            
+            boxCount();            
             console.log(proactiveApp.todoBox)
             
         }
-         
+
+        // Mark task as Complete, move to completed task in last 30days
+        if(e.target.classList.contains('todo-tick')){
+           let id = e.target.parentNode.parentNode.id;
+           proactiveApp.toggleDone(id);
+           console.log(proactiveApp.todoBox)
+        }
+
+
+        if(e.target.id === 'edit-task'){
+            const editBtn = e.target;
+            const taskId = e.target.parentNode.parentNode.id;
+            let index = proactiveApp.todoBox.findIndex(item => item.id === taskId)
+            const task = proactiveApp.todoBox[index];
+            console.log(task);            
+
+            // Hide other content of the taskWrapper container
+            const taskWrapper = e.target.parentNode.parentNode;
+            const taskWrapChildren = Array.from(taskWrapper.children);
+            taskWrapChildren.forEach(item => {
+                item.style.display = "none";                
+                if(item.classList.contains('task-on-hover-content')){
+                    item.onmouseover = function(){
+                        item.style.opacity = 0;
+                    }
+                }
+            });
+
+            // inject edit form
+            addTask.addTaskForm(taskWrapper, 'edit-task-form');
+            const taskTitle = document.getElementById('task-title');        
+            const taskDescription = document.getElementById('task-description');
+            taskTitle.value = task.title;
+            taskDescription.value = task.description;
+            const saveBtn = document.querySelector('.createTaskBtn');
+            console.log(saveBtn)
+            saveBtn.textContent = 'Save';
+            saveBtn.classList.add('edit-task-save-btn');
+            saveBtn.classList.remove('createTaskBtn');
+
+            saveBtn.addEventListener('click', function(){
+                task.title = taskTitle.value.trim();
+                task.description = taskDescription.value.trim();
+                console.log(editBtn.parentNode.previousElementSibling.previousElementSibling.children[0])
+                editBtn.parentNode.previousElementSibling.previousElementSibling.children[0].textContent = task.title
+                editBtn.parentNode.previousElementSibling.previousElementSibling.children[1].textContent = task.description
+                console.log(task)
+                document.querySelector('.edit-task-form').remove();
+                taskWrapChildren.forEach(item => {
+                    item.style.display = "block";                
+                    if(item.classList.contains('task-on-hover-content')){
+                        item.onmouseover = function(){
+                            item.style.opacity = 0.9;
+                        }
+                        item.onmouseout = function(){
+                            item.style.opacity = 0;
+                        }
+                    }
+                });
+            })
+
+        }
+
+
+
       });
         
     }

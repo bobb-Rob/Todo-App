@@ -14,6 +14,10 @@
     z-index: 100;
 }
 
+.task-wrapper > .edit-task-form{
+    grid-column: 1 / 4;
+}
+
 .add-task-form{
     /* display: none;    */
     background-color: var(--white);
