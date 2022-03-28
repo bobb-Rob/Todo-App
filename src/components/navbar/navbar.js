@@ -8,6 +8,7 @@ import bellIcon from '../icons/bell.svg'
 const navBar = (function(){
     
     const innerNavbar = function(){
+        const navContainer = document.getElementById('nav-container'); 
         const innerNav = document.createElement('div');
         innerNav.id = 'navbar';
         innerNav.innerHTML = `
@@ -22,7 +23,8 @@ const navBar = (function(){
             <div class='avatar' ></div>        
             `;
 
-        return innerNav;
+        navContainer.appendChild(innerNav); 
+      
     }
 
     return {innerNavbar}

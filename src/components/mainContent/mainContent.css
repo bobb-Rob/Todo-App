@@ -29,26 +29,26 @@
     position:relative;
     padding: 5px;
     padding-left: 0px;
-    border-bottom: 1px solid var( --neutralGray) ;
-    /* border: 2px solid rgb(26, 18, 143); */
+    border-bottom: 1px solid var( --neutralGray) ;  
     min-height: 50px;
     display: grid;
     align-items: center;
     grid-template-columns: 30px 5fr 0.5fr;
+    font-size: .9rem;
 }
 
-.task-wrapper div:nth-child(1){  
-    justify-self: start;   
+.task-wrapper > div.checkbob-wrap{  
+    justify-self: start;  
+    z-index: 10;    
 }
 
-.task-wrapper div:nth-child(3){
-    justify-self: end;
+
+/* Delete icon */
+.task-wrapper > div.task-delete-icon-container{
+    justify-self: end;   
+    z-index: 10;   
 }
 
-/* 
-.task-wrapper div:nth-child(3){
-    justify-self: end;
-} */
 
 .task-on-hover-content{
     position: absolute;   
@@ -69,89 +69,9 @@
   margin-left: -25px;
 }
 
-.task-on-hover-content svg,.task-wrapper div:nth-child(3) svg{
+
+.task-on-hover-content svg,.task-delete-icon-container svg{
   fill: var(--neutralDark3);
-}
-
-
-/* Add Task Form UI Code */
-
-
-.add-task-form{
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%) ; 
-    min-width: 350px;
-    height: auto;
-    box-shadow: 0px 0px 16px 0px var(--neutralGray);
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.add-task-form > div > div:first-child{
-    padding: 5px;   
-   
-}
-
-.add-task-form > div > div:first-child input{
-    width: 100%;
-    border: none;
-    padding: 8px;
-   
-}
-
-.add-task-form > div > div:first-child input:last-child{
-    border-top: 1px solid var(--neutralGray);
-    border-bottom: 1px solid var(--neutralGray);   
-}
-
-.add-task-form > div > div:last-child{   
-    display: flex;
-}
-
-.add-task-form > div > div:last-child div{
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    /* border: 2px solid rgb(42, 28, 107); */
-    padding: 8px;
-}
-
-.add-task-form > div > div:last-child div:first-child svg{
-   margin-right: 10px ;
-   height: 20px;
-   width: 20px;
-   cursor: pointer;
-}
-
-.add-task-form > div > div:last-child div:last-child{
-    justify-content: flex-end;  
-}
-
-.add-task-form > div > div:last-child button{
-   margin-left: 10px; 
-  padding: 5px;
-  border-radius: 5px;
-  border: none; 
   cursor: pointer;
 }
 
-.add-task-form > div > div:last-child button:first-child{  
-  background-color: var(--emeraldGreen);
-  color: var(--white);  
-}
-
-.add-task-form > div > div:last-child button:last-child{  
-  background-color: var(--emeraldGreenDark);
-  color: var(--white);  
-}
-
-.empty-input-warning{
-    color: red;
-    font-family: var(--RobotoSans-font);
-    font-size: 0.8rem;
-    margin-left: 10px;
-}

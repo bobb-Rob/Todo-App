@@ -1,0 +1,101 @@
+
+
+.todo-container .section{
+  
+    margin: 20px 0px 20px 0px;
+    padding-left: 3px;
+}
+
+.section > .sec-name-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid green; */
+}
+
+/* Section Name */
+.section > .sec-name-container > .section-header{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 20px;
+    padding: 5px;
+    border: none;
+    /* border: 1px solid var(--emeraldLight4) ; */
+    background-color: var(--white);
+    border-radius: 5px ;
+    /* box-shadow: 0px 0px 4px 0px var(--neutralDark3); */
+}
+
+/* Section Name Icons */
+.section > .sec-name-container > svg{
+    cursor: pointer;
+}
+
+.section > div.section-holder > .task-container{  
+    padding: 10px 0px 10px 0px;   
+}
+
+/* Inline Add TaskButton & Add Section Button */
+.inline-add-task-btn,.inline-add-task-btn > svg,.toggle-add-section-form > svg{
+    color: var(--neutralDark3);
+    fill: var(--emeraldLight4);
+}
+
+.section > div.section-holder > .inline-add-task-btn,.toggle-add-section-form{  
+    border: none;
+    background-color: var(--white);
+    display: flex;  
+    justify-content: center; 
+    align-items: center;  
+    cursor: pointer;  
+}
+
+.section > div.section-holder > .inline-add-task-btn{
+   padding: 0px 15px 0px 0px;
+   
+}
+.section > div.section-holder > .inline-add-task-btn:hover{
+    background-color: var(--emeraldLight1);
+    border-radius: 5px ;
+}
+
+.section > div.section-holder > .toggle-add-section-form{
+    position: relative;
+    width: 100%;
+    /* border: .6px solid var(--emeraldLight4); */
+    border-radius: 5px ; 
+    opacity: 0;  
+}
+
+.section > div.section-holder > .toggle-add-section-form:hover{
+   opacity: 1;
+}
+
+
+.name-section-form{
+    display: none; 
+}
+
+.name-section-form input{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--neutralDark3);
+}
+
+.name-section-form button{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.name-section-form .add-section-btn{
+   background-color: var(--emeraldLight2);
+}
+
+.name-section-form .cancel-add-section{
+  border: 1px solid var(--emeraldLight2);
+}
