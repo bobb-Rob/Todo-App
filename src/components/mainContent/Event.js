@@ -146,24 +146,29 @@ const eventlogic = (() => {
 
             // inject edit form
             addTask.addTaskForm(taskWrapper, 'edit-task-form');
+
+            // grab Form input and update the DOM & ProactiveTodoBox task
             const taskTitle = document.getElementById('task-title');        
             const taskDescription = document.getElementById('task-description');
             taskTitle.value = task.title;
             taskDescription.value = task.description;
-            const saveBtn = document.querySelector('.createTaskBtn');
-            console.log(saveBtn)
+            // Swap class name and change btn text content to "save"
+            const saveBtn = document.querySelector('.createTaskBtn');          
             saveBtn.textContent = 'Save';
             saveBtn.classList.add('edit-task-save-btn');
             saveBtn.classList.remove('createTaskBtn');
 
+            // Add event to Save btn
             saveBtn.addEventListener('click', function(){
                 task.title = taskTitle.value.trim();
-                task.description = taskDescription.value.trim();
-                console.log(editBtn.parentNode.previousElementSibling.previousElementSibling.children[0])
+                task.description = taskDescription.value.trim();  
+                // Grab DOM Task title & description element and update with new value
                 editBtn.parentNode.previousElementSibling.previousElementSibling.children[0].textContent = task.title
                 editBtn.parentNode.previousElementSibling.previousElementSibling.children[1].textContent = task.description
                 console.log(task)
+                // Remove the Edit form from Dom
                 document.querySelector('.edit-task-form').remove();
+                // Restore TaskWrapChildren to normal 
                 taskWrapChildren.forEach(item => {
                     item.style.display = "block";                
                     if(item.classList.contains('task-on-hover-content')){
